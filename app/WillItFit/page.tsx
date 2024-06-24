@@ -19,6 +19,7 @@ import SavedItem from '../components/SavedItem';
 import { Item } from '../lib/definitions';
 import Button from '@mui/material/Button';
 import { useRouter,useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import theme from '@/theme';
@@ -113,6 +114,7 @@ export default function Page() {
     
 
     return(
+      <Suspense>
       <Box flexGrow={1} sx={{minHeight: '100vh', minWidth:'100vw',height:'100vh', width:'100vw', display: 'flex', flexDirection: 'column'}}>
       <Grid container
       spacing={2}
@@ -214,6 +216,7 @@ export default function Page() {
         
         </Grid>
         </Box>
+        </Suspense>
     );
     }
 
