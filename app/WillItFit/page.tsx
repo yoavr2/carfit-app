@@ -7,7 +7,6 @@ import MenuItem from '@mui/material/MenuItem';
 import { Container, Box} from '@mui/system';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-// import {Asynchronous} from '@/app/WillItFit/make-selector';
 import fetchRevenue from '@/app/lib/data';
 import { sql } from '@vercel/postgres';
 import MakeSelector from '../components/MakeSelector';
@@ -26,7 +25,7 @@ import theme from '@/theme';
 import { PlayArrowRounded } from '@mui/icons-material';
 
 
-export default function Page() {
+function MainPage() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const make = searchParams.get('make');
@@ -218,6 +217,14 @@ export default function Page() {
         </Box>
         </Suspense>
     );
+    }
+
+    export default function Page(){
+      return(
+        <Suspense>
+          <MainPage/>
+        </Suspense>
+      );
     }
 
     
